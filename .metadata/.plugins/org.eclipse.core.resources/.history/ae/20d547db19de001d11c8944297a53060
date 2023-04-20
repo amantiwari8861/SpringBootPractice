@@ -1,0 +1,32 @@
+package com.learn.entity;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class User 
+{
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	@Column(name="user_name",nullable=false,length=100)
+	private String name;
+	private String email;
+	private String password;
+	private String about;
+	
+	@ManyToMany
+	@JoinTable(name="user_role",
+	joinColumn=@JoinColumn(name="user",referencedColumnName = "id")
+			)
+	private Set<Role> roles=new HashSet<>();
+}

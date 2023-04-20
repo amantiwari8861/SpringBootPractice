@@ -1,0 +1,20 @@
+package com.learn;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+
+@SpringBootApplication
+@EnableWebSecurity
+public class OnlineBankingBackend31Application {
+
+	public String sayHi()
+	{
+		return "Good morning";
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(OnlineBankingBackend31Application.class, args);
+	}
+
+}

@@ -1,0 +1,5 @@
+1679667955818	Rename type 'CustomersDao'
+1679667994057	Rename type 'CustomersDaoimpl'
+1679668010833	Rename package 'com.pack.dao.impl'
+1679668041645	Rename package 'com.pack.dao'
+1679668291215	Rename type 'CustomerRepository'

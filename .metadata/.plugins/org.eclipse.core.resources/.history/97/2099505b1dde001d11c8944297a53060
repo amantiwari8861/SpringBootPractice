@@ -1,0 +1,5 @@
+package com.lern.service;
+
+public interface CustomUserDetailService {
+
+}

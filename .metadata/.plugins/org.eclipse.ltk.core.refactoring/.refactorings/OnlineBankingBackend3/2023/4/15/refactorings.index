@@ -1,0 +1,5 @@
+1681300751272	Rename package 'com.bank.serviceimpl'
+1681300765942	Rename type 'UserService'
+1681302603433	Rename type 'UserDoesNotExistException'
+1681302727858	Delete element
+1681302846780	Rename type 'AadharNumberDoesNotExistsException'
