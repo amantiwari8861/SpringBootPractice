@@ -1,3 +1,0 @@
-spring.security.user.name=Aman
-spring.security.user.password=1234
-server.port=9090

@@ -1,6 +1,0 @@
-package com.learn.repo;
-
-public class UserRepo extends JpaRepository<User,Integer>
-{
-
-}

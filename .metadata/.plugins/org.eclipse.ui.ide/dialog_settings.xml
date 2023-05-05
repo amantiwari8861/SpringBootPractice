@@ -43,6 +43,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="F:\Spring\Spring-Boot\myprograms\blogApp\Backend-Course-Blogging-Application"/>
 			<item value="F:\Spring\Spring-Boot\myprograms\voting\voting-service\voting-service"/>
 			<item value="F:\Spring\Spring-Boot\myprograms\jwt\jwt-youtube"/>
 			<item value="F:\Spring\Spring-Boot\myprograms\DockerTest\testdocker"/>
