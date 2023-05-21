@@ -1,9 +1,0 @@
-package com.learn.security;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public class JwtTokenHelper 
-{
-	
-}
