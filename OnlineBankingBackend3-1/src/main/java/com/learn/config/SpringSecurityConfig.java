@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -21,6 +22,7 @@ import com.learn.service.CustomUserDetailService;
 @SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter
 {
 	@Autowired
@@ -52,10 +54,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter
 		.csrf()
 		.disable()
 		.authorizeHttpRequests()
+		.antMatchers(new String[]{"/api/v1/auth/login"})
+		.permitAll()
 		.anyRequest()
 		.authenticated()
-		.and().
-		exceptionHandling()
+		.and()
+		.exceptionHandling()
 		.authenticationEntryPoint(this.jwtAuthenticationEntryPoint)
 		.and()
 		.sessionManagement()

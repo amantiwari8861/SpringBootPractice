@@ -18,7 +18,7 @@ import com.learn.security.JwtAuthResponse;
 import com.learn.security.JwtTokenHelper;
 
 @RestController
-@RequestMapping("/ap1/v1/auth")
+@RequestMapping("/api/v1/auth/")
 public class LoginController {
 
 	@Autowired
@@ -35,10 +35,9 @@ public class LoginController {
 			@RequestBody JwtAuthRequest request
 			)
 	{
+		System.out.println(request);
 		this.authenticate(request.getUsername(),request.getPassword());
-		
 		UserDetails loadUserByUsername = userDetailsService.loadUserByUsername(request.getUsername());
-		
 		String token = jwtTokenHelper.generateToken(loadUserByUsername);
 		JwtAuthResponse jwtAuthResponse=new JwtAuthResponse();
 		jwtAuthResponse.setToken(token);
@@ -46,7 +45,7 @@ public class LoginController {
 		
 	}
 
-	private void authenticate(String username, String password) {
+	private void authenticate(String username, String password)  {
 		
 		UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(username, password);
 		try 
@@ -56,7 +55,7 @@ public class LoginController {
 		}
 		catch(DisabledException d)
 		{
-			
+			d.printStackTrace();
 		}
 		
 	}

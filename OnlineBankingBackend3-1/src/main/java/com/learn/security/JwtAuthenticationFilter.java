@@ -39,8 +39,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		String requestToken = request.getHeader("Authorization");
 		Enumeration<String> headerNames = request.getHeaderNames();
 
-		while(headerNames.hasMoreElements())
-		{
+		while (headerNames.hasMoreElements()) {
 			System.out.println(headerNames.nextElement());
 		}
 		// Bearer 2352523sdgsg
@@ -51,7 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 		String token = null;
 
-		if (requestToken != null && requestToken.startsWith("Bearer")) {
+		if (requestToken != null && requestToken.startsWith("Bearer ")) {
 
 			token = requestToken.substring(7);
 
@@ -94,7 +93,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 			System.out.println("username is null or context is not null");
 		}
 
-		
 		filterChain.doFilter(request, response);
 	}
 
