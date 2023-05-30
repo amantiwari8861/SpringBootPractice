@@ -8,8 +8,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User {
-
+public class Customer 
+{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
@@ -18,11 +18,11 @@ public class User {
 	private String email;
 	private Long accountNumber;
 
-	public User() {
+	public Customer() {
 		super();
 	}
 
-	public User(Long id, String userName, String password, String email, Long accountNumber) {
+	public Customer(Long id, String userName, String password, String email, Long accountNumber) {
 		super();
 		this.id = id;
 		this.userName = userName;

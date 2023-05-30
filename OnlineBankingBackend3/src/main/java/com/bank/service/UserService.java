@@ -2,14 +2,14 @@ package com.bank.service;
 
 import java.util.List;
 
-import com.bank.entity.User;
+import com.bank.entity.Customer;
 
 public interface UserService 
 {
-	public User saveUser(User user);
-	public User updateUser(User user);
+	public Customer saveUser(Customer user);
+	public Customer updateUser(Customer user);
 	public Boolean deleteUser(Long id);
-	public User getUserById(Long id);
-	public List<User> getAllUsers();
-	User getUserByAccountNumber(Long accountNumber);
+	public Customer getUserById(Long id);
+	public List<Customer> getAllUsers();
+	Customer getUserByAccountNumber(Long accountNumber);
 }

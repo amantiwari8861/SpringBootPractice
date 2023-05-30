@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.bank.entity.User;
+import com.bank.entity.Customer;
 import com.bank.exceptions.AccountDoesNotExistsException;
 import com.bank.exceptions.UserDoesNotExistsException;
 import com.bank.repository.UserRepository;
@@ -17,25 +17,25 @@ public class UserServiceImpl implements UserService{
 	UserRepository repository;
 
 	@Override
-	public User saveUser(User user) {
+	public Customer saveUser(Customer user) {
 		return repository.save(user);
 	}
 
 	@Override
-	public User updateUser(User user) {
+	public Customer updateUser(Customer user) {
 		return repository.save(user);
 	}
 
 	@Override
 	public Boolean deleteUser(Long id) {
-		User goUsers = getUserById(id);
+		Customer goUsers = getUserById(id);
 		repository.delete(goUsers);
 		return true;
 	}
 
 	@Override
-	public User getUserById(Long id) {
-		Optional<User> optional = repository.findById(id);
+	public Customer getUserById(Long id) {
+		Optional<Customer> optional = repository.findById(id);
 		if (optional.isPresent()) {
 			return optional.get();
 		}
@@ -43,8 +43,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User getUserByAccountNumber(Long accountNumber) {
-		Optional<User> byAccountNumber = repository.findByAccountNumber(accountNumber);
+	public Customer getUserByAccountNumber(Long accountNumber) {
+		Optional<Customer> byAccountNumber = repository.findByAccountNumber(accountNumber);
 		if(byAccountNumber.isPresent()) {
 			return byAccountNumber.get();
 		}
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public List<User> getAllUsers() {
+	public List<Customer> getAllUsers() {
 		return repository.findAll();
 	}
 

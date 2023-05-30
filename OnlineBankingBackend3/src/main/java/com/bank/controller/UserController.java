@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bank.entity.User;
+import com.bank.entity.Customer;
 import com.bank.service.UserService;
 
 @RestController// @Controller + @ResponseBody
@@ -26,20 +26,20 @@ public class UserController {
 	private UserService service;
 
 	@GetMapping("/users")
-	public List<User> findAllUsers() {
+	public List<Customer> findAllUsers() {
 		return service.getAllUsers();
 	}
 	
 	@PostMapping("/users")
-	public ResponseEntity<User> registerUser(@RequestBody User user) 
+	public ResponseEntity<Customer> registerUser(@RequestBody Customer user) 
 	{
-		User user2 = service.saveUser(user);
+		Customer user2 = service.saveUser(user);
 		return ResponseEntity.ok(user2); //200
 	}
 	
 	@PutMapping("/users")
-	public ResponseEntity<User> updateUser(@RequestBody User user) {
-		User user2 = service.saveUser(user);
+	public ResponseEntity<Customer> updateUser(@RequestBody Customer user) {
+		Customer user2 = service.saveUser(user);
 		return ResponseEntity.ok(user2); //200
 	}
 	
@@ -50,13 +50,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/users/{id}")
-	public ResponseEntity<User> getUserById(@PathVariable Long id) {
-		User user = service.getUserById(id);
+	public ResponseEntity<Customer> getUserById(@PathVariable Long id) {
+		Customer user = service.getUserById(id);
 		return ResponseEntity.ok(user); //200
 	}
 	@GetMapping("/users/by-accountno/{accountNumber}")
-	public ResponseEntity<User> getUserByAadhar(@PathVariable Long accountNumber) {
-		User user = service.getUserByAccountNumber(accountNumber);
+	public ResponseEntity<Customer> getUserByAadhar(@PathVariable Long accountNumber) {
+		Customer user = service.getUserByAccountNumber(accountNumber);
 		return ResponseEntity.ok(user); //200
 	}
 	
